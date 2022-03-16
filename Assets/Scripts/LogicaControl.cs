@@ -11,8 +11,6 @@ public class LogicaControl : MonoBehaviour
     public GameObject[] NivelPreFab;
     private int indicenivel;
     private GameObject ObjetoNivel;
-    private GameObject Moneda;
-    public int Puntaje;
     public Text TextodelJuego;
     public bool Escucho=false;
     // Start is called before the first frame update
@@ -25,6 +23,35 @@ public class LogicaControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TextodelJuego.text="Nivel: "+(indicenivel+1)+"\nPuntaje: "+Jugador.zanahoria;
+        if(Jugador.Perdiste){
+            TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
+            Jugador.zanahoria+"\nGame Over"+"\nPulsa R para continuar";
+            if(Input.GetKeyDown("r")){
+                Jugador.zanahoria=0;
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
+                Jugador.gameObject.transform.position=PuntoInicio.transform.position;
+                Destroy(ObjetoNivel);
+                ObjetoNivel=Instantiate(NivelPreFab[indicenivel]);
+                ObjetoNivel.transform.SetParent(this.transform);
+                Jugador.Perdiste=false;
+             //   TextodelJuego.text="Nivel: "+(indicenivel+1)+"\nPuntaje: "+Jugador.zanahoria;
+            }
+        }
+        if(Jugador.siguienteNivel){
+             TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
+            Jugador.zanahoria+"\nCompletaste el nivel"+"\nPulsa R para avanzar";
+            if(Input.GetKeyDown("r")){
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
+                Jugador.gameObject.transform.position=PuntoInicio.transform.position;
+                Destroy(ObjetoNivel);
+                indicenivel+=1;
+                ObjetoNivel=Instantiate(NivelPreFab[indicenivel]);
+                ObjetoNivel.transform.SetParent(this.transform);
+                Jugador.siguienteNivel=false;
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ public class LogicaJugador : MonoBehaviour
     public AudioSource Salto;
     public AudioSource Caida;
     public AudioSource Perder;
-    public int zanahoria;
+    public int zanahoria=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,12 +58,14 @@ public class LogicaJugador : MonoBehaviour
             zanahoria=zanahoria+1;
             Debug.Log("Zanahoria:"+zanahoria);
         }
+        */
         if(c1.collider.gameObject.tag=="enemigo"){
-            Debug.Log("Enemigo");
-            Perder.Play();
+
+            Debug.Log("Perdiste");
+          /*  Perder.Play();
             Perdiste=true;
             JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
-        }*/
+        */}
     }
 
     private void Voltear(float horizontal)
@@ -85,9 +87,14 @@ public class LogicaJugador : MonoBehaviour
             zanahoria=zanahoria+1;
             Debug.Log("Puntos:"+zanahoria);
         }
-        if(c1.tag=="enemigo"){
-            Perder.Play();
+         if(c1.tag=="enemigo"){
+           Perder.Play();
             Perdiste=true;
+            JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
+        }
+         if(c1.tag=="siguientenivel"){
+           Debug.Log("Ganaste");
+           siguienteNivel=true;
             JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
         }
     }

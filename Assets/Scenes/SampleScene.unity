@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -296.6, y: 153.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -209.39, y: 89.64}
+  m_SizeDelta: {x: 334.4237, y: 152.87335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73660168
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.99607843, g: 0.99607843, b: 0.99607843, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -396,8 +396,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.01, y: -2.5499997, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.01, y: -2.5499997, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 186062509}
   m_RootOrder: 4
@@ -536,7 +536,7 @@ MonoBehaviour:
   NivelPreFab:
   - {fileID: 4133118834829366882, guid: 2aa82a7b9bbbc7bc4bb17e44228465f0, type: 3}
   - {fileID: 4133118834829366882, guid: 116335e6ceafa2ef98be5a7249d33741, type: 3}
-  Puntaje: 0
+  - {fileID: 4133118834829366882, guid: 72cc5454ab871fdb4bc1067c4d87a4a3, type: 3}
   TextodelJuego: {fileID: 73660168}
   Escucho: 0
 --- !u!4 &958442178
@@ -810,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 4874927279721129439, guid: 38e79106816cb46fd9cb0829cf92aa41,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4874927279721129439, guid: 38e79106816cb46fd9cb0829cf92aa41,
         type: 3}
