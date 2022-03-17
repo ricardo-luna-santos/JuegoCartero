@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\LogicaCamara.cs" />
      <Compile Include="Assets\Scripts\LogicaControl.cs" />
+     <Compile Include="Assets\Scripts\LogicaCuerpo.cs" />
      <Compile Include="Assets\Scripts\LogicaEnemigo.cs" />
      <Compile Include="Assets\Scripts\LogicaJugador.cs" />
      <Compile Include="Assets\Scripts\LogicaPies.cs" />

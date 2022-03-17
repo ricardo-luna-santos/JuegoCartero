@@ -28,5 +28,9 @@ public class LogicaEnemigo : MonoBehaviour
                 LaEscala.x *=-1;
                 transform.localScale=LaEscala;
             }
+        if(c1.tag=="Player")
+        {
+            Debug.Log("Muerte...");
+        }
     }
 }

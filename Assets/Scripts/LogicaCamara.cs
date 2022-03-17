@@ -20,6 +20,6 @@ public class LogicaCamara : MonoBehaviour
     {
         transform.position=new Vector3(Mathf.Clamp(blanco.position.x,xMin,xMax),
                                         Mathf.Clamp(blanco.position.y,yMin,yMax),
-                                        blanco.position.z);       
+                                        blanco.position.z-1);       
     }
 }

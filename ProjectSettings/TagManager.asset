@@ -10,6 +10,7 @@ TagManager:
   - siguientenivel
   - borde
   - zanahoria
+  - cuerpo
   layers:
   - Default
   - TransparentFX

@@ -50,24 +50,6 @@ public class LogicaJugador : MonoBehaviour
         miAnimacion.SetFloat("velocidad",Mathf.Abs(horizontal));
     }
 
-    private void onCollisionEnter2D(Collision2D c1){
-      /*  if (c1.collider.gameObject.tag == "plataforma"){
-           // miAnimacion.SetFloat("salto",0);
-        }
-       if(c1.collider.gameObject.tag == "zanahoria"){
-            zanahoria=zanahoria+1;
-            Debug.Log("Zanahoria:"+zanahoria);
-        }
-        */
-        if(c1.collider.gameObject.tag=="enemigo"){
-
-            Debug.Log("Perdiste");
-          /*  Perder.Play();
-            Perdiste=true;
-            JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
-        */}
-    }
-
     private void Voltear(float horizontal)
     {
     if (EnPiso){
@@ -78,24 +60,6 @@ public class LogicaJugador : MonoBehaviour
             LaEscala.x*=-1;
             transform.localScale=LaEscala;
             }
-        }
-    }
-    void OnTriggerEnter2D(Collider2D c1)
-    {
-        if(c1.tag=="zanahoria")
-        {
-            zanahoria=zanahoria+1;
-            Debug.Log("Puntos:"+zanahoria);
-        }
-         if(c1.tag=="enemigo"){
-           Perder.Play();
-            Perdiste=true;
-            JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
-        }
-         if(c1.tag=="siguientenivel"){
-           Debug.Log("Ganaste");
-           siguienteNivel=true;
-            JugadorBody.constraints=RigidbodyConstraints2D.FreezeAll;
         }
     }
 }

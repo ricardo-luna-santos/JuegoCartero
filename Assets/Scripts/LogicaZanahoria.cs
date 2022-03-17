@@ -19,7 +19,7 @@ public class LogicaZanahoria : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D c1)
     {
-        if(c1.tag=="Player")
+        if(c1.tag=="cuerpo")
         {
             Destroy(gameObject);
             sonido.Play();
