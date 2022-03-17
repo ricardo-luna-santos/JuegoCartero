@@ -39,10 +39,23 @@ public class LogicaControl : MonoBehaviour
              //   TextodelJuego.text="Nivel: "+(indicenivel+1)+"\nPuntaje: "+Jugador.zanahoria;
             }
         }
+
         if(Jugador.siguienteNivel){
              TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
             Jugador.zanahoria+"\nCompletaste el nivel"+"\nPulsa R para avanzar";
+            if(indicenivel==NivelPreFab.Length-1){
+            TextodelJuego.text="Juego Terminado\nPulsa R para reiniciar el juego";
             if(Input.GetKeyDown("r")){
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
+                Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
+                Jugador.gameObject.transform.position=PuntoInicio.transform.position;
+                Destroy(ObjetoNivel);
+                indicenivel=0;
+                ObjetoNivel=Instantiate(NivelPreFab[indicenivel]);
+                ObjetoNivel.transform.SetParent(this.transform);
+                Jugador.siguienteNivel=false;
+            }
+        }else if(Input.GetKeyDown("r")){
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
                 Jugador.gameObject.transform.position=PuntoInicio.transform.position;
