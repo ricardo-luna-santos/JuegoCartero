@@ -40,8 +40,9 @@ public class LogicaControl : MonoBehaviour
             }
         }
 
-        if(Jugador.siguienteNivel){
-             TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
+        if(Jugador.siguienteNivel && Jugador.zanahoria==15){
+            Jugador.zanahoria=0;
+            TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
             Jugador.zanahoria+"\nCompletaste el nivel"+"\nPulsa R para avanzar";
             if(indicenivel==NivelPreFab.Length-1){
             TextodelJuego.text="Juego Terminado\nPulsa R para reiniciar el juego";
@@ -65,6 +66,9 @@ public class LogicaControl : MonoBehaviour
                 ObjetoNivel.transform.SetParent(this.transform);
                 Jugador.siguienteNivel=false;
             }
+        }else{
+            TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
+            Jugador.zanahoria+"\nTe falta completar "+(15-Jugador.zanahoria)+" puntos para pasar el nivel";
         }
     }
 }
