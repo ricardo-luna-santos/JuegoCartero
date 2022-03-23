@@ -26,7 +26,7 @@ public class LogicaControl : MonoBehaviour
         TextodelJuego.text="Nivel: "+(indicenivel+1)+"\nPuntaje: "+Jugador.zanahoria;
         if(Jugador.Perdiste){
             TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
-            Jugador.zanahoria+"\nGame Over"+"\nPulsa R para continuar";
+            Jugador.zanahoria+"\nPerdiste"+"\nPulsa R para continuar";
             if(Input.GetKeyDown("r")){
                 Jugador.zanahoria=0;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
@@ -38,15 +38,14 @@ public class LogicaControl : MonoBehaviour
                 Jugador.Perdiste=false;
              //   TextodelJuego.text="Nivel: "+(indicenivel+1)+"\nPuntaje: "+Jugador.zanahoria;
             }
-        }
-
-        if(Jugador.siguienteNivel && Jugador.zanahoria==15){
-            Jugador.zanahoria=0;
+        }else if(Jugador.siguienteNivel && Jugador.zanahoria==15){
+            
             TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
             Jugador.zanahoria+"\nCompletaste el nivel"+"\nPulsa R para avanzar";
             if(indicenivel==NivelPreFab.Length-1){
             TextodelJuego.text="Juego Terminado\nPulsa R para reiniciar el juego";
             if(Input.GetKeyDown("r")){
+                Jugador.zanahoria=0;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
                 Jugador.gameObject.transform.position=PuntoInicio.transform.position;
@@ -57,6 +56,7 @@ public class LogicaControl : MonoBehaviour
                 Jugador.siguienteNivel=false;
             }
         }else if(Input.GetKeyDown("r")){
+                Jugador.zanahoria=0;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.None;
                 Jugador.JugadorBody.constraints=RigidbodyConstraints2D.FreezeRotation;
                 Jugador.gameObject.transform.position=PuntoInicio.transform.position;
@@ -68,7 +68,7 @@ public class LogicaControl : MonoBehaviour
             }
         }else{
             TextodelJuego.text="Nivel"+(indicenivel+1)+"\nPuntaje "+
-            Jugador.zanahoria+"\nTe falta completar "+(15-Jugador.zanahoria)+" puntos para pasar el nivel";
+            Jugador.zanahoria+"\nTe falta completar "+(15-Jugador.zanahoria)+" puntos\npara pasar el nivel";
         }
     }
 }
